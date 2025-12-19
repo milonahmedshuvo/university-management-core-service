@@ -10,6 +10,6 @@ router.post('/',
      academicSemesterControllers.insertToBD
     )
 
-
+router.get('/', academicSemesterControllers.getAllFromDB)
 
 export const academicSemesterRoute = router
