@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\.5506b4b1f08482962b9e4a70b0586d7e93316cd1-audit.json",
+    "files": [
+        {
+            "date": 1766048911725,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-18-12-15-error.log",
+            "hash": "8a1f5e589c1daea3fab821a37f78c9678e3447afd079ae8bbdbe7b28431f2ec1"
+        },
+        {
+            "date": 1766052062961,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-18-12-16-error.log",
+            "hash": "72ffe5d998427c78840699cba936ae6fbe0e41e6f02c21acffb9465e50666968"
+        },
+        {
+            "date": 1766058035878,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-18-12-17-error.log",
+            "hash": "2e592279355c95cc0549d110fc1b4579de6d113c8f96d21d4c772ecbd80841bb"
+        },
+        {
+            "date": 1766059924297,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-18-12-18-error.log",
+            "hash": "5d3a392b9a0f76405ff5a557639a673256c6272ebbc36907d25323a131233df2"
+        },
+        {
+            "date": 1766063235204,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-18-12-19-error.log",
+            "hash": "f69f5908e211d7751d2819957819964c5040e062ae26d64be6b33af5906b9f0a"
+        },
+        {
+            "date": 1766143955695,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-19-12-17-error.log",
+            "hash": "53abdfa54004bcaf427e1e8a1f8d753a4347e85796db76edf0523cc18db25542"
+        },
+        {
+            "date": 1766147158919,
+            "name": "C:\\Projects\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2025-19-12-18-error.log",
+            "hash": "bb27a52a5ed348784070f61ca3ad7af9eac2114c5b521fc267d3e9f83a7fe034"
+        }
+    ],
+    "hashType": "sha256"
+}
