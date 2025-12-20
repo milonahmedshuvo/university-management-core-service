@@ -16,9 +16,9 @@ const insertToBD = catchAsync(async (req:Request, res:Response, next:NextFunctio
 
 const getAllFromDB = catchAsync(async (req:Request, res:Response, next:NextFunction)=> {
 
-    const filters = pick(req.query, ['year', 'code', 'searchTerm'])
+    const filters = pick(req.query, ['year', 'code', 'searchTerm', 'startMonth', 'endMonth'])
     const options = pick(req.query, ['page', 'limit', 'sortBy', 'sortOrder'])
-    console.log("filters", filters)
+    // console.log("filters", filters)
     console.log("options", options)
     const result = await academicSemesterServices.getAllFromDB(filters, options)
     sendResponse(res, {
@@ -29,7 +29,19 @@ const getAllFromDB = catchAsync(async (req:Request, res:Response, next:NextFunct
     })
 })
 
+
+const getDataById = catchAsync(async (req:Request, res:Response, next:NextFunction)=> {
+    const result = await academicSemesterServices.getDataById(req.params.id)
+    sendResponse(res, {
+        statusCode: 200,
+        success: true,
+        message: "Get Single Academic Semester Data!!",
+        data: result
+    })
+})
+
 export const academicSemesterControllers = {
     insertToBD,
-    getAllFromDB
+    getAllFromDB,
+    getDataById
 }
