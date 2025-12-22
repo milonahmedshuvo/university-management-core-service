@@ -19,7 +19,7 @@ const getAllFromDB = catchAsync(async (req:Request, res:Response, next:NextFunct
     const filters = pick(req.query, ['year', 'code', 'searchTerm', 'startMonth', 'endMonth'])
     const options = pick(req.query, ['page', 'limit', 'sortBy', 'sortOrder'])
     // console.log("filters", filters)
-    console.log("options", options)
+    // console.log("options", options)
     const result = await academicSemesterServices.getAllFromDB(filters, options)
     sendResponse(res, {
         statusCode: 200,
