@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../../shared/catchAsync";
+import pick from "../../../shared/pick";
 import sendResponse from "../../../shared/sendResponse";
 import { studentService } from "./student.service";
 
@@ -14,7 +15,10 @@ const insertIntoToDB = catchAsync(async(req:Request, res:Response, next:NextFunc
 })
 
 const getAllDataFromDB = catchAsync(async(req:Request, res:Response, next:NextFunction) =>{
-    const result = await studentService.getAllDataFromDB()
+    const filters = pick(req.query, ['searchTerm', 'firstName', 'email', 'gender'])
+    const options = pick(req.query, ['page', 'limit', 'sortBy', 'sortOrder'])
+
+    const result = await studentService.getAllDataFromDB(filters, options)
     sendResponse(res, {
         statusCode: 200,
         success: true,
