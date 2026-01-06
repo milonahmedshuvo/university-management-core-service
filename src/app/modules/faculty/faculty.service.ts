@@ -38,7 +38,6 @@ const getAllDataFromDB = async (filters: { searchTerm?: string}, options:IPagina
 
     const whereConditions = andConditions?.length > 0 ? {AND: andConditions} : {}
 
-
     const result = await prisma.faculty.findMany({
         skip,
         take: limit,

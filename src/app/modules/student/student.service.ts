@@ -74,9 +74,20 @@ const getDataByIdFromDB = async (id:string):Promise< Student | null > => {
     return result
 };
 
+const updateIntoDB = async (id: string, payload:Partial<Student>) => {
+      const result = await prisma.student.update({
+        where : {
+            id
+        },
+        data: payload
+      })
+
+      return result
+}
 
 export const studentService = {
     insertIntoToDB,
     getAllDataFromDB,
-    getDataByIdFromDB
+    getDataByIdFromDB,
+    updateIntoDB
 }

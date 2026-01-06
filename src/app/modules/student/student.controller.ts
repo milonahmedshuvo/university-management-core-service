@@ -37,8 +37,23 @@ const getDataByIdFromDB = catchAsync(async(req:Request, res:Response, next:NextF
     })
 })
 
+
+const updateIntoDB = catchAsync(async(req:Request, res:Response, next:NextFunction) =>{
+    const id = req.params.id
+    const payload = req.body
+
+    const result = await studentService.updateIntoDB(id, payload)
+    sendResponse(res, {
+        statusCode: 200,
+        success: true,
+        message: "Update Student Successfull!!",
+        data: result
+    })
+})
+
 export const studentController = {
       insertIntoToDB,
       getAllDataFromDB,
-      getDataByIdFromDB
+      getDataByIdFromDB,
+      updateIntoDB
 }

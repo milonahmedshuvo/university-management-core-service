@@ -14,6 +14,7 @@ const insertToBD = catchAsync(async (req:Request, res:Response, next:NextFunctio
     })
 }) 
 
+
 const getAllFromDB = catchAsync(async (req:Request, res:Response, next:NextFunction)=> {
 
     const filters = pick(req.query, ['year', 'code', 'searchTerm', 'startMonth', 'endMonth'])
