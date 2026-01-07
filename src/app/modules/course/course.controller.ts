@@ -68,11 +68,24 @@ const facultyAssign = catchAsync (async (req:Request, res:Response, next:NextFun
     })
 })
 
+
+const removeFaculty = catchAsync (async (req:Request, res:Response, next:NextFunction)=>{
+    const result = await courseService.removeFaculty(req.params.id, req.body.facalties)
+    sendResponse(res, {
+      statusCode: 200,
+      success: true,
+      message: "Remove faculty course successfull!!",
+      data: result
+    })
+})
+
+
 export const courseController = {
     insertIntoDB,
     getAllCourse,
     getCourseById,
     deleteCourseByid,
     updateOneInDB,
-    facultyAssign
+    facultyAssign,
+    removeFaculty
 }

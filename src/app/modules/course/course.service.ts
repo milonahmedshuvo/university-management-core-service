@@ -89,6 +89,11 @@ export const getAllCourse = async (): Promise<Course[]> => {
           course: true,
         },
       },
+      facalties: {
+        include: {
+          faculty: true,
+        }
+      },
     },
   });
 
@@ -109,7 +114,11 @@ export const getCourseById = async (id: string) => {
           course: true,
         },
       },
-      facalties: true
+      facalties: {
+        include: {
+          faculty: true
+        }
+      }
     },
   });
 
@@ -256,11 +265,28 @@ const facultyAssign = async (id: string, payload: string[] ):Promise<CourseFacal
 
 
 
+const removeFaculty =async (id:string, payload:string[]) => {
+  
+      const result = await prisma.courseFacalty.deleteMany({
+        where: {
+          courseId: id,
+          facultyId: {
+              in: payload
+          }
+        }
+      })
+
+      return result
+}
+
+
+
 export const courseService = {
   insertIntoDB,
   getAllCourse,
   getCourseById,
   updateOneInDB,
   deleteCourseByid,
-  facultyAssign
+  facultyAssign,
+  removeFaculty,
 };

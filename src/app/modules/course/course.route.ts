@@ -9,6 +9,7 @@ router.get('/:id', courseController.getCourseById)
 router.delete('/:id', courseController.deleteCourseByid)
 router.patch('/:id', courseController.updateOneInDB)
 router.post('/:id/assign-facalties',  courseController.facultyAssign)
+router.post('/:id/remove-faculties', courseController.removeFaculty)
 
 
 export const courseRoute = router;
