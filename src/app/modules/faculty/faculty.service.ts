@@ -73,12 +73,12 @@ const getDataByIdFromDB = async (id: string) => {
         include : {
             academicDepartment: true,
             academicFaculty: true,
-            courses: true
-            // courses: {
-            //     include: {
-            //         course: true
-            //     }
-            // }          
+            // courses: true
+            courses: {
+                include: {
+                    course: true
+                }
+            }          
         },
        
 
