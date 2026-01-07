@@ -59,7 +59,7 @@ const updateOneInDB = catchAsync (async (req:Request, res:Response, next:NextFun
 
 
 const facultyAssign = catchAsync (async (req:Request, res:Response, next:NextFunction)=>{
-    const result = await courseService.facultyAssign(req.params.id, req.body.facalties)
+    const result = await courseService.assignFaculty(req.params.id, req.body.facalties)
     sendResponse(res, {
       statusCode: 200,
       success: true,

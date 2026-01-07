@@ -243,7 +243,7 @@ const updateOneInDB = async (id: string, payload: ICourseCreateData) => {
 
 
 
-const facultyAssign = async (id: string, payload: string[] ):Promise<CourseFacalty[]> => {
+const assignFaculty = async (id: string, payload: string[] ):Promise<CourseFacalty[]> => {
      const result =await prisma.courseFacalty.createMany({
       data: payload.map((faculty) => ({
          courseId: id,
@@ -287,6 +287,6 @@ export const courseService = {
   getCourseById,
   updateOneInDB,
   deleteCourseByid,
-  facultyAssign,
+  assignFaculty,
   removeFaculty,
 };
